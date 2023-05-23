@@ -13,3 +13,124 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks{
+  padding-block: 30px;
+
+  .task-list{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding-block: 5px;
+
+    .task-name{
+      text-decoration: none;
+      color: black;
+      padding-inline: 10px;
+
+      transition: transform .3s;
+    }
+    .task-name:hover{
+      transform: scale(1.1);
+    }
+    .delete-btn{
+      display: flex;
+      align-items: center;
+
+      transition: transform .3s;
+    }
+    .delete-btn:hover{
+      transform: scale(1.15);
+    }
+  }
+}
+.task-list img{
+  height: 18px;
+  width: 18px;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px 10px 10px;
+  border-radius: 5px;
+  background-color: lightskyblue;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+
+  transition: background-color .3s;
+}
+.edit{
+  padding: 10px 5px 10px 10px;
+}
+.btn:hover{
+  background-color: hsl(203, 100%, 69%);
+}
+.btn img{
+  padding-right: 5px;
+}
+.btn-container{
+  display: flex;
+}
+.btn-container > * {
+  margin-inline: 5px;
+}
+.title-content{
+  display: flex;
+}
+.title-content img{
+  padding-right: 10px;
+}
+.details{
+  padding-block: 20px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  padding-block: 30px;
+}
+#task_title, #task_details{
+  border: solid 1px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.checkbox{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: start;
+  margin: 5px;
+}
+.checkbox > * {
+  margin-inline: 5px;
+}
+#submit{
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+}

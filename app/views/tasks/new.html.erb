@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Add Task</h1>
+  <%= form_with model: @task do |f| %>
+    <div class="form">
+      <%= f.text_field :title, placeholder: 'Title...' %>
+      <%= f.text_field :details, placeholder: 'Details...' %>
+    </div>
+    <div class="btn-container">
+      <label for="submit" class="btn">
+      <%= image_tag "add.svg" %>
+      <%= f.submit "Add Task", id: "submit"%>
+      </label>
+  <% end %>
+      <%= link_to tasks_path, class: "btn" do%>
+        <%= image_tag "back.svg" %>
+        Back
+      <% end %>
+    </div>
+</div>

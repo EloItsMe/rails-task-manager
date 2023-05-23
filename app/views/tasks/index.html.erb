@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>My Tasks</h1>
+  <div class="tasks">
+    <% @tasks.each do |task|%>
+      <li class="task-list">
+        <% if task.completed  %>
+          <%= image_tag "checked-box.svg" %>
+        <% else %>
+          <%= image_tag "empty-box.svg" %>
+        <% end %>
+        <%= link_to task.title, task_path(task.id), class: "task-name" %>
+        <%= link_to task_path(task.id),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+        class: "delete-btn" do%>
+          <%= image_tag "delete.svg" %>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
+
+  <%= link_to new_task_path, class: "btn" do%>
+    <%= image_tag "add.svg" %>
+    Add task
+  <% end %>
+</div>
